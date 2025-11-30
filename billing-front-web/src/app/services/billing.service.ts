@@ -11,10 +11,10 @@ export class BillingService {
     constructor(private http: HttpClient) { }
 
     public getBills(): Observable<any> {
-        return this.http.get(`${this.host}/bills`);
+        return this.http.get(`${this.host}/api/bills`);
     }
 
     public getBillById(id: number): Observable<any> {
-        return this.http.get(`${this.host}/fullBill/${id}`);
+        return this.http.get(`${this.host}/bills/${id}`);
     }
 }

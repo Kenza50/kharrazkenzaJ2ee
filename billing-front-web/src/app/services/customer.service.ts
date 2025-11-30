@@ -12,6 +12,6 @@ export class CustomerService {
     constructor(private http: HttpClient) { }
 
     public getCustomers(): Observable<any> {
-        return this.http.get(`${this.host}/customers`);
+        return this.http.get(`${this.host}/api/customers`);
     }
 }
