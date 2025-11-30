@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header">Bills</div>
+        <div class="card-body">
+            <table class="table" *ngIf="bills">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>CustomerID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bills._embedded.bills">
+                        <td>{{b.id}}</td>
+                        <td>{{b.billingDate | date:'medium'}}</td>
+                        <td>{{b.customerId}}</td>
+                        <td>
+                            <button (click)="onBillDetails(b)" class="btn btn-success">
+                                <i class="bi bi-list-ul"></i> Details
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
